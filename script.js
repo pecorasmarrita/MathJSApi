@@ -1,19 +1,20 @@
 function loadJavaDoc() {
+    var value = document.getElementById("jsinput").value;
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
        document.getElementById("javascriptdemo").innerHTML = this.responseText;
       }
       else document.getElementById("javascriptdemo").innerHTML = "Errore durante il calcolo";
-
     };
-    xhttp.open("GET", "http://api.mathjs.org/v4/?expr=2*(7-3)", true);
+    xhttp.open("GET", "http://api.mathjs.org/v4/?expr="+value, false);
     xhttp.send();
   }
 
   function loadJqueryDoc() {
+    var value = document.getElementById("jqueryinput").value;
     $(document).ready(function(){
-          $.ajax({url: "http://api.mathjs.org/v4/?expr=2*(7-3)", 
+          $.ajax({url: "http://api.mathjs.org/v4/?expr="+value, 
           success: function(result){
             $("#jquerydemo").html(result);
           },
