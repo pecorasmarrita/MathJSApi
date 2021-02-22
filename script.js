@@ -5,7 +5,7 @@ function loadJavaDoc() {
       if (this.readyState == 4 && this.status == 200) {
        document.getElementById("javascriptdemo").innerHTML = this.responseText;
       }
-      else document.getElementById("javascriptdemo").innerHTML = "Errore durante il calcolo";
+      else document.getElementById("javascriptdemo").innerHTML = "Errore durante il calcolo (controllare espressione)";
     };
     xhttp.open("GET", "http://api.mathjs.org/v4/?expr="+value, false);
     xhttp.send();
@@ -19,7 +19,7 @@ function loadJavaDoc() {
             $("#jquerydemo").html(result);
           },
           error: function(){
-            $("#jquerydemo").html("Errore durante il calcolo");
+            $("#jquerydemo").html("Errore durante il calcolo (controllare espressione)");
           }
         });
       });
