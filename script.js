@@ -11,9 +11,14 @@ function loadJavaDoc() {
 
   function loadJqueryDoc() {
     $(document).ready(function(){
-          $.ajax({url: "http://api.mathjs.org/v4/?expr=2*(7-3)", success: function(result){
+          $.ajax({url: "http://api.mathjs.org/v4/?expr=2*(7-3)", 
+          success: function(result){
             $("#jquerydemo").html(result);
-          }});
+          },
+          error: function(){
+            $("#jquerydemo").html("Errore durante il calcolo");
+          }
+        });
       });
   }
 
