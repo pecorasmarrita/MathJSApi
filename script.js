@@ -14,7 +14,7 @@ function loadJavaDoc() {
   function loadJqueryDoc() {
     var value = document.getElementById("jqueryinput").value;
     $(document).ready(function(){
-          $.ajax({url: 'http://api.mathjs.org/v4/?expr='+value, 
+          $.ajax({url: "http://api.mathjs.org/v4/?expr="+value, 
           success: function(result){
             $("#jquerydemo").html(value + "=" +result);
           },
